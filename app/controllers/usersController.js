@@ -2,12 +2,10 @@ const _ = require('lodash')
 const DB = require("../models")
 
 const UsersController = {
-  index:async (ctx) => {
-    DB.User.findAll().then(users => {
-      console.log(users)
-    })
+  index: async (ctx) => {
+    let user = await DB.User.findAll()
     ctx.body = {
-      name:'哈哈哈哈'
+      name:user
     }
   }
 }
